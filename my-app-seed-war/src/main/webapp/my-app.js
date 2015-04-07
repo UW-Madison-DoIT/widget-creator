@@ -1,6 +1,6 @@
 'use strict';
 
-(function() {
+define([], function() {
 	
 	app.config(['$routeProvider', function($routeProvider) {
 			$routeProvider.when('/default', {
@@ -13,4 +13,4 @@
 		}
 	]);
 
-})();
+});
