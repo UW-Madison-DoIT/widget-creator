@@ -24,7 +24,15 @@ The unique aspect about this project is that it overlays [angularjs-portal-frame
 That project provides us the frame that My UW uses: the header, the sidebar, and the footer. It provides
 us an extension point in a file with a specific name: [my-app.js](my-app-seed-war/src/main/webapp/my-app.js).
 
-In that file you can see that we reference a variable named `app`; this variable is the result of [angular.module](https://docs.angularjs.org/api/ng/type/angular.Module)
+That file is expected to be a [require.js](http://requirejs.org/) module, i.e. enclosed within a `define()` function.  RequireJS can be used to include more javascript resources from within [my-app.js](my-app-seed-war/src/main/webapp/my-app.js).  For example:
+```javascript
+var myWidget = require(['my-widget.js'], function() {
+  alert('Require runs my-widget.js first, and then this function.');
+});
+```
+For more detailed information, see the [require.js quickstart guide](http://requirejs.org/docs/start.html) and [API documentation](http://requirejs.org/docs/api.html).
+
+In my-app.js, you can see that we reference a variable named `app`; this variable is the result of [angular.module](https://docs.angularjs.org/api/ng/type/angular.Module)
 that was provided by angularjs-portal-frame.
 
 With that reference we can use Angular to register controllers, services, directives, you name it.
