@@ -1,9 +1,9 @@
 {
   "person": {
-   "userName": "admin",
+   "userName": "userx",
    "sessionKey": "someRandomKey",
-   "serverName": "local",
-   "displayName": "Aaron Administrator",
-   "version": "4.1.1.18-SNAPSHOT"
+   "serverName": "localhost",
+   "displayName": "Some Person",
+   "version": "4.1.1.19"
   }
 }
