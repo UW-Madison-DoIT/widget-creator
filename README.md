@@ -1,5 +1,7 @@
 ## My UW App Seed
 
+[![Build Status](https://travis-ci.org/UW-Madison-DoIT/my-app-seed.svg)](https://travis-ci.org/UW-Madison-DoIT/my-app-seed)
+
 This is a "seed" project intended to be used as a template for creating "Apps" in My UW in a new way. 
 
 Rather than creating a Portlet, developers can clone this project and write a Servlet 3 web application
