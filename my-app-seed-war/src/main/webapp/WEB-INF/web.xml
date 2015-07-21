@@ -22,5 +22,6 @@
       <servlet-name>StaticServlet</servlet-name>
       <url-pattern>/default</url-pattern>
       <url-pattern>/view2</url-pattern>
+      <url-pattern>/settings</url-pattern>
   </servlet-mapping>
 </web-app>
