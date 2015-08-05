@@ -23,11 +23,11 @@ define(['angular'], function(angular) {
             'searchURL' : 'https://my.wisc.edu/web/apps/search/'
         })
         .constant('NOTIFICATION', {
+            'enabled' : false,
             'groupFiltering' : false,
             'notificationFullURL' : 'notifications'
         })
         .constant('MISC_URLS',{
-            'enabled' : false,
             'feedbackURL' : 'https://my.wisc.edu/portal/p/feedback',
             'back2ClassicURL' : null,
             'whatsNewURL' : null
