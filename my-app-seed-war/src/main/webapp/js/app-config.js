@@ -2,8 +2,12 @@ define(['angular'], function(angular) {
 
     var config = angular.module('app-config', []);
     config
+        .constant('APP_FLAGS', {
+           'welcome' : false
+        })
         .constant('SERVICE_LOC', {
             'sessionInfo' : 'json/sessionsample.json',
+            'welcomeInfo' : 'samples/welcome.json',
             'sidebarInfo' : 'samples/sidebar.json',
             'notificationsURL' : 'samples/notifications.json',
             'groupURL' : null
@@ -12,7 +16,7 @@ define(['angular'], function(angular) {
             'title' : 'MyUW',
             'crest' : 'img/uwcrest_web_sm.png',
             'crestalt' : 'UW Crest',
-            'sublogo' : 'beta'
+            'sublogo' : 'seed'
         })
         .constant('SEARCH',{
             'isWeb' : false,
@@ -23,6 +27,7 @@ define(['angular'], function(angular) {
             'notificationFullURL' : 'notifications'
         })
         .constant('MISC_URLS',{
+            'enabled' : false,
             'feedbackURL' : 'https://my.wisc.edu/portal/p/feedback',
             'back2ClassicURL' : null,
             'whatsNewURL' : null
