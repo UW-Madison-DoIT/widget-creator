@@ -3,7 +3,9 @@ define(['angular'], function(angular) {
     var config = angular.module('app-config', []);
     config
         .constant('APP_FLAGS', {
-            'features' : false
+            'features' : false,
+            'showSidebar' : true,
+            'showSearch' : true
         })
         .constant('SERVICE_LOC', {
             'sessionInfo' : 'json/sessionsample.json',
@@ -32,7 +34,8 @@ define(['angular'], function(angular) {
         .constant('MISC_URLS',{
             'feedbackURL' : 'https://my.wisc.edu/portal/p/feedback',
             'back2ClassicURL' : null,
-            'whatsNewURL' : null
+            'whatsNewURL' : null,
+            'loginURL' : '/portal/Login?profile=bucky'
         });
 
     return config;
