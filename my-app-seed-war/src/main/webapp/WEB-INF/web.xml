@@ -23,5 +23,6 @@
       <url-pattern>/default</url-pattern>
       <url-pattern>/view2</url-pattern>
       <url-pattern>/settings</url-pattern>
+      <url-pattern>/about</url-pattern>
   </servlet-mapping>
 </web-app>

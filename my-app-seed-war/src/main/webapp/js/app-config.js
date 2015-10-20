@@ -8,10 +8,11 @@ define(['angular'], function(angular) {
             'showSearch' : true
         })
         .constant('SERVICE_LOC', {
-            'sessionInfo' : 'json/sessionsample.json',
-            'sidebarInfo' : 'samples/sidebar.json',
-            'featuresInfo' : 'samples/features.json',
-            'notificationsURL' : 'samples/notifications.json',
+            'aboutURL' : null,
+            'sessionInfo' : 'staticFeeds/session.json',
+            'sidebarInfo' : 'staticFeeds/sidebar.json',
+            'featuresInfo' : 'staticFeeds/features.json',
+            'notificationsURL' : null,
             'kvURL' : null,
             'groupURL' : null
         })
@@ -32,10 +33,11 @@ define(['angular'], function(angular) {
             'notificationFullURL' : 'notifications'
         })
         .constant('MISC_URLS',{
-            'feedbackURL' : 'https://my.wisc.edu/portal/p/feedback',
-            'back2ClassicURL' : null,
-            'whatsNewURL' : null,
-            'loginURL' : '/portal/Login?profile=bucky'
+          'feedbackURL' : 'https://my.wisc.edu/portal/p/feedback',
+          'back2ClassicURL' : null,
+          'whatsNewURL' : null,
+          'loginURL' : '/portal/Login?profile=bucky',
+          'logoutURL' : '/portal/Logout'
         });
 
     return config;
