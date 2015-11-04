@@ -21,7 +21,8 @@ define(['angular'], function(angular) {
             'ariaLabelTitle' : 'My U W',
             'crest' : 'img/uwcrest_web_sm.png',
             'crestalt' : 'UW Crest',
-            'sublogo' : 'seed'
+            'sublogo' : 'seed',
+            'guestUserName' : 'guest'
         })
         .constant('SEARCH',{
             'isWeb' : false,
