@@ -4,6 +4,7 @@ define([
     './example/routes', //add all the paths to your routes here
     'portal/settings/route', // example pulling in portal module routes
     'portal/about/route', // Nice about page for your application
+    'portal/main/routes', 
     'portal',
     'app-config',
     'ngRoute',
@@ -11,7 +12,7 @@ define([
     'ngStorage',
     './example/controllers', //add all your paths to your other js files here
     './example/directives',
-], function(angular, require, exampleRoutes, settingsRoute, aboutRoute) { //notice each route file is now an object
+], function(angular, require, exampleRoutes, settingsRoute, aboutRoute, mainRoutes) { //notice each route file is now an object
 
     var app = angular.module('my-app', [
         'app-config',
@@ -31,6 +32,7 @@ define([
             when('/view2', exampleRoutes.second).
             when('/settings', settingsRoute).
             when('/about', aboutRoute).
+            when('/access-denied', mainRoutes.accessDenied).
             otherwise({ redirectTo : '/default'});
 
             //keep theses paths in sync with web.xml for html5mode
