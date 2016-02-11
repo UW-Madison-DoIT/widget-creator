@@ -5,7 +5,9 @@ define(['angular'], function(angular) {
         .constant('APP_FLAGS', {
             'features' : false,
             'showSearch' : true,
-            'isWeb' : false
+            'isWeb' : false,
+            'gaSearchParam' : 'q',
+            'loginOnLoad' : false
         })
         .constant('SERVICE_LOC', {
             'aboutURL' : null,
@@ -13,7 +15,8 @@ define(['angular'], function(angular) {
             'featuresInfo' : 'staticFeeds/features.json',
             'notificationsURL' : 'staticFeeds/notifications.json',
             'kvURL' : null,
-            'groupURL' : null
+            'groupURL' : null,
+            'loginSilentURL' : null
         })
         .constant('NAMES', {
             'title' : 'App Seed',
