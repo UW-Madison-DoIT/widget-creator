@@ -4,7 +4,7 @@ define(['angular'], function(angular) {
 
     var config = angular.module('override', []);
     config
-        //see configuration.md for howto
+        //see http://uw-madison-doit.github.io/uw-frame/latest/#/md/configuration for howto
         .constant('OVERRIDE', {
           'NAMES' : {
             'title' : 'My App Seed Name',
