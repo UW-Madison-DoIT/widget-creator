@@ -1,7 +1,7 @@
 define([
     'angular',
     'require',
-    './example/routes', //add all the paths to your routes here
+    './view-home/routes', //add all the paths to your routes here
     'portal/settings/routes', // example pulling in portal module routes
     'portal/about/route', // Nice about page for your application
     'portal/main/routes',
@@ -10,14 +10,14 @@ define([
     'ngRoute',
     'ngSanitize',
     'ngStorage',
-    './example/controllers', //add all your paths to your other js files here
-    './example/directives',
-], function(angular, require, exampleRoutes, settingsRoutes, aboutRoute, mainRoutes) { //notice each route file is now an object
+    './view-home/controllers', //add all your paths to your other js files here
+    './view-home/directives'
+], function(angular, require, homeRoutes, settingsRoutes, aboutRoute, mainRoutes) { //notice each route file is now an object
 
     var app = angular.module('my-app', [
         'app-config',
-        'my-app.example.controllers', // add in your modules here
-        'my-app.example.directives',
+        'my-app.view-home.controllers', // add in your modules here
+        'my-app.view-home.directives',
         'ngRoute',
         'ngSanitize',
         'ngStorage',
@@ -27,18 +27,17 @@ define([
     // TODO: Think of a more extensible approach such that frame and app can each manage their own routing without conflict
     app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
+		// IMPORTANT: Keep theses paths in sync with web.xml for html5mode
         $routeProvider.
-            when('/default', exampleRoutes.default). //use your route object to get the templateurl
-            when('/view2', exampleRoutes.second).
+            when('/home', homeRoutes.home). //use your route object to get the templateurl
             when('/settings', settingsRoutes.betaSettings).
             when('/user-settings', settingsRoutes.userSettings).
             when('/about', aboutRoute).
             when('/access-denied', mainRoutes.accessDenied).
-            otherwise({ redirectTo : '/default'});
+            otherwise({ redirectTo : '/home'});
 
-            //keep theses paths in sync with web.xml for html5mode
+
     }]);
-
 
     return app;
 
