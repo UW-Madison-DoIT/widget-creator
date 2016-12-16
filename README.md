@@ -62,4 +62,4 @@ of the code base. You would see other modules that are siblings of the war modul
 * security
 * integration
 
-If your application won't have these things, you probably should consider a portlet instead.
+For even better encapsulation and decoupling, you could consider factoring these modules into their own repositories, even independently semantically versioned.
