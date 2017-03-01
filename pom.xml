@@ -6,12 +6,6 @@
 	<packaging>pom</packaging>
 	<name>My App Seed Parent</name>
 	<description>Parent pom for seed project demonstrating how to write "apps" for My UW Madison.</description>
-   <repositories>
-		<repository>
-			<id>code.doit-uw-releases</id>
-			<url>https://code.doit.wisc.edu/maven/content/repositories/uw-releases/</url>
-		</repository>
-	</repositories>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
