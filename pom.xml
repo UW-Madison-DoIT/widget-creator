@@ -6,16 +6,22 @@
 	<packaging>pom</packaging>
 	<name>My App Seed Parent</name>
 	<description>Parent pom for seed project demonstrating how to write "apps" for My UW Madison.</description>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>edu.wisc.my.apps</groupId>
-				<artifactId>uw-frame</artifactId>
-				<version>3.0.0</version>
-				<type>war</type>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+	<scm>
+            <connection>scm:git:git@github.com:UW-Madison-DoIT/my-app-seed.git</connection>
+            <developerConnection>scm:git:git@github.com:UW-Madison-DoIT/my-app-seed.git</developerConnection>
+            <url>https://github.com/UW-Madison-DoIT/my-app-seed</url>
+            <tag>HEAD</tag>
+        </scm>
+        <dependencyManagement>
+            <dependencies>
+	        <dependency>
+                    <groupId>edu.wisc.my.apps</groupId>
+                    <artifactId>uw-frame</artifactId>
+                    <version>3.0.0</version>
+                    <type>war</type>
+		</dependency>
+            </dependencies>
+        </dependencyManagement>
 	<build>
 		<pluginManagement>
 			<plugins>
