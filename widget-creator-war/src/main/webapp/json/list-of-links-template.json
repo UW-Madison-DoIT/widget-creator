@@ -1,0 +1,34 @@
+{
+  "entry": {
+    "layoutObject": {
+      "id": 3,
+      "url": "www.example.com",
+      "type": "list-of-links",
+      "widgetType": "list-of-links",
+      "title": "List of Links",
+      "jsonSample": false,
+      "hasWidgetURL": false,
+      "widgetConfig": {
+        "launchText": "Launch the Full App",
+        "additionalText": "Additional Text",
+        "links": [
+          {
+            "title": "The Google",
+            "href": "http://www.google.com",
+            "icon": "fa-google",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          {
+            "title": "Bing",
+            "href": "http://www.bing.com",
+            "icon": "fa-bed",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          }
+        ]
+      },
+      "description": "A simple list of links"
+    }
+  }
+}
