@@ -8,10 +8,16 @@ define(['angular'], function(angular) {
         .constant('OVERRIDE', {
           'NAMES': {
             'title': 'Widget Creator',
-            'fname': 'widget-creator'
+            'fname': 'widget-creator',
           },
           'SERVICE_LOC': {
-            'templates': '/json/starter-templates'
+            'templates': '/json/starter-templates',
+            'widgetApi': {
+              // For local testing, change to 'staticFeeds/'
+              'entry': 'data:application/json;base64,',
+              'entrySuffix': '',
+              'entries': '/portal/api/marketplace/entries.json',
+            },
           }
         });
 

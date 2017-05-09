@@ -55,6 +55,15 @@ define(['angular', 'jquery'], function (angular, $) {
       $scope.reload();
     };
 
+    $scope.wrapAndEncode = function() {
+      var wrapped = {
+        'entry': {
+          'layoutObject': $scope.widget
+        }
+      };
+      return btoa(JSON.stringify(wrapped));
+    }
+
     /*-----------------*/
     /* Local functions */
     /*-----------------*/
