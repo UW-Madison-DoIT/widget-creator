@@ -1,0 +1,90 @@
+<div class="portlet-frame widget-creator">
+  <app-header app-title="Widget Creator" app-description="Fill out the form, see your widget, copy/paste into entity file, done."></app-header>
+  <div class="portlet-body tile-list">
+    <div layout-gt-sm="row" layout-sm="column" ng-controller="WidgetCreatorController as widgetCreatorCtrl">
+
+      <!-- WIDGET CONFIGURATION FORM -->
+      <md-card flex-gt-sm="60" class="config" layout-padding>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-title">Smart Widget Configuration</span>
+            <p>Read
+              <a href="http://uw-madison-doit.github.io/angularjs-portal/widgets.html"
+                 target="_blank"
+                 rel="noopener noreferrer">the documentation on widgets
+              </a>.
+            </p>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <form name="widgetConfiguration">
+            <div layout="column" class="container__select-template">
+              <h4 id="select-template-label">Choose a starter template</h4>
+              <span>or select 'Custom' to make your own.</span>
+
+              <!-- WIDGET TYPE SELECT BOX -->
+              <md-select ng-model="selectedTemplate" placeholder="Select a starter template" ng-model-options="{trackBy: '$value.value'}" ng-change="changeTemplate()">
+                <md-option ng-value="option" ng-repeat="option in templateOptions">{{ option.name }}</md-option>
+              </md-select>
+            </div>
+            <!-- WIDGET TITLE -->
+            <md-input-container class="md-block md-accent">
+              <label for="title">Title</label>
+              <input type="input" id="title" placeholder="Enter title" ng-model="widget.title">
+            </md-input-container>
+            <!-- WIDGET DESCRIPTION -->
+            <md-input-container class="md-block md-accent">
+              <label for="desc">Description</label>
+              <input type="input" id="desc" placeholder="Enter description" ng-model="widget.description">
+            </md-input-container>
+            <!-- HTML TEMPLATE (custom only) -->
+            <md-input-container class="md-block md-accent" ng-if="widget.type === 'widget-creator'">
+              <label for="template">HTML template *</label>
+              <textarea ng-model="widget.widgetTemplate" id="template" rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+            <!-- JSON SAMPLE (custom only) -->
+            <md-input-container class="md-block md-accent" ng-if="widget.jsonSample">
+              <label for="content">Widget URL JSON sample * **<span style="color : red;">{{ errorJSON }}</span></label>
+              <textarea ng-model="content" id="content" rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+            <!-- WIDGET CONFIGURATION -->
+            <md-input-container class="md-block md-accent">
+              <label for="config">Widget configuration * ***<span style="color : red;">{{ errorConfigJSON }}</span></label>
+              <textarea ng-model="widget.widgetConfig" id='config' rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+            <!-- WIDGET URL -->
+            <md-input-container class="md-block md-accent" ng-if="widget.hasWidgetURL">
+              <label for="widgetURL">Widget URL *</label>
+              <input type='URL' ng-model="widget.widgetURL" id="widgetURL"></textarea>
+            </md-input-container>
+          </form>
+          <!-- RELOAD/CLEAR -->
+          <div class="config" layout="row" layout-align="start center">
+            <md-button class="md-accent md-raised" ng-click="clear()">Clear</md-button>
+            <md-button ng-click="reload()" class="md-primary md-raised">Update</md-button>
+          </div>
+          <!-- NOTES -->
+          <div class="help-notes" layout="column" layout-padding>
+            <p>* Changes to these fields requires you to click the refresh button to see the changes in the preview</p>
+            <p>** This is normally result from the widgetURL. This result is dumped into the "$scope.content"
+              variable.</p>
+            <p>*** Valid JSON that gets stored in '$scope.widget.widgetConfig'</p>
+          </div>
+        </md-card-content>
+      </md-card>
+      <!-- WIDGET PREVIEW -->
+      <div flex-gt-sm="40">
+        <div class="list-container no-padding output" layout="row" layout-align="center center">
+          <!--<widget widget="{{ widget }}"></widget>-->
+          <div>
+            {{ widget }}
+          </div>
+        </div>
+        <div class="config" layout="row" layout-align="center center">
+          <md-button class="md-accent md-raised" ng-click="clear()">Clear</md-button>
+          <md-button ng-click="reload()" class="md-primary md-raised">Update</md-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
