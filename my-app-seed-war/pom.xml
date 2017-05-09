@@ -2,12 +2,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>edu.wisc.my.app</groupId>
-		<artifactId>widget-creator</artifactId>
+		<artifactId>my-app-seed</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>widget-creator-war</artifactId>
-	<name>Widget Creator War</name>
-	<description>Web application for uportal-app-framework widget creator.</description>
+	<artifactId>my-app-seed-war</artifactId>
+	<name>My App Seed War</name>
+	<description>Web application for My UW app seed project.</description>
 	<packaging>war</packaging>
 
 	<dependencies>

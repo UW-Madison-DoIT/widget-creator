@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.wisc.my.app</groupId>
-	<artifactId>widget-creator</artifactId>
+	<artifactId>my-app-seed</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Widget Creator Parent</name>
-	<description>Parent pom for widget creator project.</description>
+	<name>My App Seed Parent</name>
+	<description>Parent pom for seed project demonstrating how to write "apps" for My UW Madison.</description>
 	<scm>
             <connection>scm:git:git@github.com:UW-Madison-DoIT/my-app-seed.git</connection>
             <developerConnection>scm:git:git@github.com:UW-Madison-DoIT/my-app-seed.git</developerConnection>
@@ -17,7 +17,7 @@
 	        <dependency>
                     <groupId>edu.wisc.my.apps</groupId>
                     <artifactId>uw-frame</artifactId>
-                    <version>4.1.0</version>
+                    <version>3.1.4</version>
                     <type>war</type>
 		</dependency>
             </dependencies>
@@ -57,6 +57,6 @@
 	</build>
 
 	<modules>
-		<module>widget-creator-war</module>
+		<module>my-app-seed-war</module>
 	</modules>
 </project>

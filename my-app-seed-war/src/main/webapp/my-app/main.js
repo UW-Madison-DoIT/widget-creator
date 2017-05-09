@@ -11,15 +11,13 @@ define([
     'ngSanitize',
     'ngStorage',
     './view-home/controllers', //add all your paths to your other js files here
-    './view-home/directives',
-    './view-home/services'
+    './view-home/directives'
 ], function(angular, require, homeRoutes, settingsRoutes, aboutRoute, mainRoutes) { //notice each route file is now an object
 
     var app = angular.module('my-app', [
         'app-config',
         'my-app.view-home.controllers', // add in your modules here
         'my-app.view-home.directives',
-        'my-app.view-home.services',
         'ngRoute',
         'ngSanitize',
         'ngStorage',
