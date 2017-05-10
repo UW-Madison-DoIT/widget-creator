@@ -5,7 +5,7 @@ define(['angular', 'jquery'], function (angular, $) {
   var app = angular.module('my-app.view-home.controllers', []);
 
   // WIDGET CREATOR controller
-  app.controller('WidgetCreatorController', ['$scope', '$route', '$localStorage', '$log', 'widgetCreatorService', function ($scope, $route, $localStorage, $log, widgetCreatorService) {
+  app.controller('WidgetCreatorController', ['$scope', '$route', '$log', 'widgetCreatorService', function ($scope, $route, $log, widgetCreatorService) {
 
     var starterTemplates = [];
     /*------------------*/
@@ -19,8 +19,7 @@ define(['angular', 'jquery'], function (angular, $) {
     ];
     $scope.selectedTemplate = {};
     $scope.content = {};
-    $scope.storage = {};
-    $scope.storage.isInitialized = false;
+    $scope.preview = undefined;
 
     /*-----------------*/
     /* Scope functions */
@@ -28,16 +27,13 @@ define(['angular', 'jquery'], function (angular, $) {
 
     // Reload widget preview
     $scope.reload = function () {
-      updateStorage();
-      $route.reload();
+      prepareWidgetDataForDisplay();
     };
 
     // Clear widget configuration
     $scope.clear = function () {
       if (confirm('Are you sure, all your config will be cleared')) {
-        $localStorage.$reset();
         init();
-        $route.reload();
       }
     };
 
@@ -50,15 +46,12 @@ define(['angular', 'jquery'], function (angular, $) {
         }
       });
 
-      updateStorage();
-
-      $scope.reload();
     };
 
-    $scope.wrapLayout = function() {
+    var wrapLayout = function(preview) {
       var wrapped = {
         'entry': {
-          'layoutObject': $scope.widget
+          'layoutObject': preview
         }
       };
       return JSON.stringify(wrapped);
@@ -86,29 +79,22 @@ define(['angular', 'jquery'], function (angular, $) {
      * Convert JSON objects to strings so they can be displayed in HTML
      */
     var prepareWidgetDataForDisplay = function() {
-      // Cast widget objects as string for display
-      $scope.widget.widgetConfig = JSON.stringify($scope.widget.widgetConfig);
-      if ($scope.widget.jsonSample) {
+      var preview = angular.copy($scope.widget);
+      if (!angular.isString($scope.widget.widgetConfig)) {
+        $scope.widget.widgetConfig = JSON.stringify($scope.widget.widgetConfig);
+      }
+      preview.widgetConfig = JSON.parse($scope.widget.widgetConfig);
+      if (preview.jsonSample) {
         $scope.content = JSON.stringify($scope.widget.jsonSample)
       }
+      $scope.preview = wrapLayout(preview);
     };
 
     /**
-     * Update local storage with current scope content
+     * Initialize widget creator
      */
-    var updateStorage = function() {
-      $scope.storage.selectedTemplate = $scope.selectedTemplate;
-      $scope.storage.widget = $scope.widget;
-      $scope.storage.widgetConfig = $scope.widget.widgetConfig;
-      $scope.storage.content = $scope.content;
-      $scope.storage.isInitialized = true;
-    };
-
-    /**
-     * Get starter templates and setup scope variables
-     */
-    var setupDefaults = function() {
-      widgetCreatorService.getStarterTemplates()
+    var init = function() {
+      return widgetCreatorService.getStarterTemplates()
         .then(function(templates) {
           starterTemplates = templates;
           $log.log('Got starter templates');
@@ -127,57 +113,12 @@ define(['angular', 'jquery'], function (angular, $) {
 
           }
         })
-        .catch(function(error) {
-          $log.warn('WidgetCreatorController couldn\'t get starter templates');
-          $log.error(error);
-        })
     };
 
-    /**
-     * Setup scope variables based on content of local storage
-     */
-    var setupDefaultsFromStorage = function() {
-      $scope.widget = $scope.storage.widget;
-      $scope.selectedTemplate = $scope.storage.selectedTemplate;
-
-      // If a user has entered values into custom widget type fields, make sure it's valid and display correctly
-      if ($scope.storage.widgetConfig && isValidJSON($scope.storage.widgetConfig)) {
-        // Parse widgetConfig as JSON
-        $scope.widget.widgetConfig = JSON.parse($scope.storage.widgetConfig);
-      } else {
-        $scope.errorConfigJSON = $scope.storage.widgetConfig ? 'JSON NOT VALID' : '';
-      }
-
-      if ($scope.storage.content && isValidJSON($scope.storage.content)) {
-        $scope.content = $scope.storage.content;
-      } else {
-        console.log($scope.storage.content);
-        $scope.errorJSON = $scope.storage.content ? 'JSON NOT VALID' : '';
-      }
-
-      prepareWidgetDataForDisplay();
-      $scope.storage.isInitialized = true;
-    };
-
-    /**
-     * Initialize widget creator
-     */
-    var init = function() {
-      // Setup variable in local storage
-      $localStorage.widgetCreator = $localStorage.widgetCreator || {};
-
-      // Makes the widget creator stuff contained
-      $scope.storage = $localStorage.widgetCreator;
-
-      if ($scope.storage.isInitialized) {
-        // Get defaults from storage
-        setupDefaultsFromStorage();
-      } else {
-        setupDefaults();
-      }
-    };
-
-    init();
+    init().catch(function(error) {
+      $log.warn('WidgetCreatorController couldn\'t get starter templates');
+      $log.error(error);
+    });
   }]);
 
 });
