@@ -14,7 +14,7 @@ define(['angular'], function(angular) {
             'templates': '/json/starter-templates',
             'widgetApi': {
               // For local testing, change to 'staticFeeds/'
-              'entry': 'data:application/json;base64,',
+              'entry': 'data:application/json,',
               'entrySuffix': '',
               'entries': '/portal/api/marketplace/entries.json',
             },

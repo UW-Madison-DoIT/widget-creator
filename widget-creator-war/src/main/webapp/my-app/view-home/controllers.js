@@ -55,13 +55,13 @@ define(['angular', 'jquery'], function (angular, $) {
       $scope.reload();
     };
 
-    $scope.wrapAndEncode = function() {
+    $scope.wrapLayout = function() {
       var wrapped = {
         'entry': {
           'layoutObject': $scope.widget
         }
       };
-      return btoa(JSON.stringify(wrapped));
+      return JSON.stringify(wrapped);
     }
 
     /*-----------------*/
