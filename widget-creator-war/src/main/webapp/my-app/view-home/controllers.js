@@ -20,6 +20,8 @@ define(['angular', 'jquery'], function (angular, $) {
     $scope.selectedTemplate = {};
     $scope.content = {};
     $scope.preview = undefined;
+    $scope.errorJSON = undefined;
+    $scope.errorConfigJSON = undefined;
 
     /*-----------------*/
     /* Scope functions */
@@ -27,7 +29,7 @@ define(['angular', 'jquery'], function (angular, $) {
 
     // Reload widget preview
     $scope.reload = function () {
-      prepareWidgetDataForDisplay();
+      prepareWidgetDataForDisplay($scope.widget);
     };
 
     // Clear widget configuration
@@ -42,7 +44,7 @@ define(['angular', 'jquery'], function (angular, $) {
       // Set widget equal to starter template that matches the selected type
       angular.forEach(starterTemplates, function(value, key) {
         if ($scope.selectedTemplate.value == value.entry.layoutObject.type) {
-          $scope.widget = value.entry.layoutObject;
+          $scope.widget = widgetAsEditable(value.entry.layoutObject);
         }
       });
 
@@ -54,7 +56,7 @@ define(['angular', 'jquery'], function (angular, $) {
           'layoutObject': preview
         }
       };
-      return JSON.stringify(wrapped);
+      return btoa(JSON.stringify(wrapped));
     }
 
     /*-----------------*/
@@ -66,29 +68,41 @@ define(['angular', 'jquery'], function (angular, $) {
      * @param json
      * @returns {boolean}
      */
-    var isValidJSON = function isValidJson(json) {
+    var parseJSON = function parseJSON(json) {
       try {
-        JSON.parse(json);
-        return true;
+        return JSON.parse(json);
       } catch (e) {
-        return false;
+        return undefined;
       }
     };
 
     /**
      * Convert JSON objects to strings so they can be displayed in HTML
      */
-    var prepareWidgetDataForDisplay = function() {
-      var preview = angular.copy($scope.widget);
-      if (!angular.isString($scope.widget.widgetConfig)) {
-        $scope.widget.widgetConfig = JSON.stringify($scope.widget.widgetConfig);
+    var prepareWidgetDataForDisplay = function(editable) {
+      var preview = angular.copy(editable);
+      var widgetConfig = parseJSON(editable.widgetConfig);
+      var jsonSample = parseJSON($scope.content);
+      if (widgetConfig && jsonSample) {
+        preview.widgetConfig = widgetConfig;
+        preview.jsonSample = jsonSample
+        $scope.preview = wrapLayout(preview);
+      } else {
+        $scope.errorJSON = (!jsonSample) ? 'JSON NOT VALID' : undefined;
+        $scope.errorConfigJSON = (!widgetConfig) ? 'JSON NOT VALID' : undefined;
       }
-      preview.widgetConfig = JSON.parse($scope.widget.widgetConfig);
-      if (preview.jsonSample) {
-        $scope.content = JSON.stringify($scope.widget.jsonSample)
-      }
-      $scope.preview = wrapLayout(preview);
     };
+
+    var widgetAsEditable = function(widget) {
+      var editable = angular.copy(widget);
+      if (!angular.isString(editable.widgetConfig)) {
+        editable.widgetConfig = JSON.stringify(editable.widgetConfig);
+      }
+      if (editable.jsonSample) {
+        $scope.content = JSON.stringify(editable.jsonSample)
+      }
+      return editable;
+    }
 
     /**
      * Initialize widget creator
@@ -101,8 +115,8 @@ define(['angular', 'jquery'], function (angular, $) {
           if (templates[0].entry.layoutObject) {
 
             // Set default widget type
-            $scope.widget = templates[0].entry.layoutObject;
-            prepareWidgetDataForDisplay();
+            $scope.widget = widgetAsEditable(templates[0].entry.layoutObject);
+            prepareWidgetDataForDisplay($scope.widget);
 
             // Set selected template
             angular.forEach($scope.templateOptions, function(value, key) {
