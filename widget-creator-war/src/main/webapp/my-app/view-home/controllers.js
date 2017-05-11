@@ -82,24 +82,28 @@ define(['angular', 'jquery'], function (angular, $) {
     var prepareWidgetDataForDisplay = function(editable) {
       var preview = angular.copy(editable);
       var widgetConfig = parseJSON(editable.widgetConfig);
-      var jsonSample = parseJSON($scope.content);
-      if (widgetConfig && jsonSample) {
+      var sample = parseJSON(editable.sample);
+
+      $scope.errorJSON = (!sample) ? 'JSON NOT VALID' : undefined;
+      $scope.errorConfigJSON = (!widgetConfig) ? 'JSON NOT VALID' : undefined;
+
+      if (widgetConfig && (!editable.jsonSample || sample)) {
         preview.widgetConfig = widgetConfig;
-        preview.jsonSample = jsonSample
+        $scope.content = sample
         $scope.preview = wrapLayout(preview);
-      } else {
-        $scope.errorJSON = (!jsonSample) ? 'JSON NOT VALID' : undefined;
-        $scope.errorConfigJSON = (!widgetConfig) ? 'JSON NOT VALID' : undefined;
       }
     };
 
     var widgetAsEditable = function(widget) {
       var editable = angular.copy(widget);
+      $scope.errorConfigJSON = undefined;
       if (!angular.isString(editable.widgetConfig)) {
         editable.widgetConfig = JSON.stringify(editable.widgetConfig);
       }
+      $scope.errorJSON = undefined;
       if (editable.jsonSample) {
-        $scope.content = JSON.stringify(editable.jsonSample)
+        editable.sample = JSON.stringify(editable.jsonSample);
+        $scope.content = editable.jsonSample;
       }
       return editable;
     }
