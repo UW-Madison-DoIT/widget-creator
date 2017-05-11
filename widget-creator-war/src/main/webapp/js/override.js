@@ -11,7 +11,7 @@ define(['angular'], function(angular) {
             'fname': 'widget-creator',
           },
           'SERVICE_LOC': {
-            'templates': '/json/starter-templates',
+            'templates': 'json/starter-templates',
             'widgetApi': {
               // For local testing, change to 'staticFeeds/'
               'entry': 'data:application/json;base64,',
