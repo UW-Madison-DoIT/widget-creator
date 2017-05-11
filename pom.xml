@@ -7,11 +7,41 @@
   <name>Widget Creator Parent</name>
   <description>Parent pom for widget creator project.</description>
   <scm>
-    <connection>scm:git:git@github.com:UW-Madison-DoIT/my-app-seed.git</connection>
-    <developerConnection>scm:git:git@github.com:UW-Madison-DoIT/my-app-seed.git</developerConnection>
-    <url>https://github.com/UW-Madison-DoIT/my-app-seed</url>
+    <connection>scm:git:git@github.com:UW-Madison-DoIT/widget-creator.git</connection>
+    <developerConnection>scm:git:git@github.com:UW-Madison-DoIT/widget-creator.git</developerConnection>
+    <url>https://github.com/UW-Madison-DoIT/widget-creator</url>
     <tag>HEAD</tag>
   </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>myuw-public-releases</id>
+      <url>https://artifacts.doit.wisc.edu/artifactory/myuw-public-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>myuw-public-snapshots</id>
+      <url>https://artifacts.doit.wisc.edu/artifactory/myuw-public-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>myuw-public-releases</id>
+      <url>https://artifacts.doit.wisc.edu/artifactory/myuw-public-releases/</url>
+      <releases><enabled>true</enabled></releases>
+      <snapshots><enabled>false</enabled></snapshots>
+    </repository>
+    <repository>
+      <id>myuw-public-snapshots</id>
+      <url>https://artifacts.doit.wisc.edu/artifactory/myuw-public-snapshots/</url>
+      <releases><enabled>false</enabled></releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -25,6 +55,16 @@
   <build>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <configuration>
+            <attachClasses>true</attachClasses>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.4.2</version>
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
