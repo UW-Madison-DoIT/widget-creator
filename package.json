@@ -1,7 +1,7 @@
 {
   "name": "widget-creator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web application for uportal-app-framework widget creator.",
   "main": "index.js",
   "scripts": {
     "build:pre": "mvn clean package",
