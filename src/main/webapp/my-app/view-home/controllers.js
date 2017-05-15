@@ -1,21 +1,20 @@
 'use strict';
 
-define(['angular', 'jquery'], function (angular, $) {
-
-  var app = angular.module('my-app.view-home.controllers', []);
-
+define(['angular', 'jquery'], function(angular, $) {
+  return angular.module('my-app.view-home.controllers', [])
   // WIDGET CREATOR controller
-  app.controller('WidgetCreatorController', ['$scope', '$route', '$log', 'widgetCreatorService', function ($scope, $route, $log, widgetCreatorService) {
-
+  .controller('WidgetCreatorController', [
+    '$scope', '$route', '$log', 'widgetCreatorService',
+    function($scope, $route, $log, widgetCreatorService) {
     var starterTemplates = [];
-    /*------------------*/
+    /* ---------------- */
     /* Bindable members */
-    /*------------------*/
+    /* ---------------- */
     $scope.templateOptions = [
-      { "value": "search-with-links", "name": "Search with links" },
-      { "value": "list-of-links", "name": "List of links" },
-      { "value": "rss", "name": "RSS widget" },
-      { "value": "widget-creator", "name": "Custom" }
+      {'value': 'search-with-links', 'name': 'Search with links'},
+      {'value': 'list-of-links', 'name': 'List of links'},
+      {'value': 'rss', 'name': 'RSS widget'},
+      {'value': 'widget-creator', 'name': 'Custom'},
     ];
     $scope.selectedTemplate = {};
     $scope.content = {};
@@ -23,19 +22,19 @@ define(['angular', 'jquery'], function (angular, $) {
     $scope.errorJSON = undefined;
     $scope.errorConfigJSON = undefined;
 
-    /*-----------------*/
+    /* --------------- */
     /* Scope functions */
-    /*-----------------*/
+    /* --------------- */
 
     // Reload widget preview
-    $scope.reload = function () {
-      prepareWidgetDataForDisplay($scope.widget);
+    $scope.reload = function() {
+      $scope.prepareWidgetDataForDisplay($scope.widget);
     };
 
     // Clear widget configuration
-    $scope.clear = function () {
+    $scope.clear = function() {
       if (confirm('Are you sure, all your config will be cleared')) {
-        init();
+        $scope.init();
       }
     };
 
@@ -44,33 +43,32 @@ define(['angular', 'jquery'], function (angular, $) {
       // Set widget equal to starter template that matches the selected type
       angular.forEach(starterTemplates, function(value, key) {
         if ($scope.selectedTemplate.value == value.entry.layoutObject.type) {
-          $scope.widget = widgetAsEditable(value.entry.layoutObject);
+          $scope.widget = $scope.widgetAsEditable(value.entry.layoutObject);
         }
       });
-
     };
 
-    var wrapLayout = function(preview) {
+    /* --------------- */
+    /* Local functions */
+    /* --------------- */
+
+    $scope.wrapLayout = function(preview) {
       var wrapped = {
         'entry': {
-          'layoutObject': preview
-        }
+          'layoutObject': preview,
+        },
       };
-      return btoa(JSON.stringify(wrapped));
-    }
-
-    /*-----------------*/
-    /* Local functions */
-    /*-----------------*/
+      return btoa(angular.toJson(wrapped));
+    };
 
     /**
      * Check if json is valid
-     * @param json
-     * @returns {boolean}
+     * @param {String} json the json to parse
+     * @return {Object|undefined}
      */
-    var parseJSON = function parseJSON(json) {
+    $scope.parseJSON = function parseJSON(json) {
       try {
-        return JSON.parse(json);
+        return angular.fromJson(json);
       } catch (e) {
         return undefined;
       }
@@ -78,49 +76,56 @@ define(['angular', 'jquery'], function (angular, $) {
 
     /**
      * Convert JSON objects to strings so they can be displayed in HTML
+     * @param  {Object} editable The object used to store user edits
      */
-    var prepareWidgetDataForDisplay = function(editable) {
+    $scope.prepareWidgetDataForDisplay = function(editable) {
       var preview = angular.copy(editable);
-      var widgetConfig = parseJSON(editable.widgetConfig);
-      var sample = parseJSON(editable.sample);
+      var widgetConfig = $scope.parseJSON(editable.widgetConfig);
+      var sample = $scope.parseJSON(editable.sample);
 
       $scope.errorJSON = (!sample) ? 'JSON NOT VALID' : undefined;
       $scope.errorConfigJSON = (!widgetConfig) ? 'JSON NOT VALID' : undefined;
 
       if (widgetConfig && (!editable.jsonSample || sample)) {
         preview.widgetConfig = widgetConfig;
-        $scope.content = sample
-        $scope.preview = wrapLayout(preview);
+        $scope.content = sample;
+        $scope.preview = $scope.wrapLayout(preview);
       }
     };
 
-    var widgetAsEditable = function(widget) {
+    /**
+     * Takes a valid widget configuration and creates an user-editable version.
+     * @param  {Object} widget widget configuration
+     * @return {Object}        user-editable widget config
+     */
+    $scope.widgetAsEditable = function(widget) {
       var editable = angular.copy(widget);
       $scope.errorConfigJSON = undefined;
       if (!angular.isString(editable.widgetConfig)) {
-        editable.widgetConfig = JSON.stringify(editable.widgetConfig);
+        editable.widgetConfig = angular.toJson(editable.widgetConfig);
       }
       $scope.errorJSON = undefined;
       if (editable.jsonSample) {
-        editable.sample = JSON.stringify(editable.jsonSample);
+        editable.sample = angular.toJson(editable.jsonSample);
         $scope.content = editable.jsonSample;
       }
       return editable;
-    }
+    };
 
     /**
      * Initialize widget creator
+     * @return {Promise<Array>} starter templates
      */
-    var init = function() {
+    $scope.init = function() {
       return widgetCreatorService.getStarterTemplates()
         .then(function(templates) {
           starterTemplates = templates;
           $log.log('Got starter templates');
           if (templates[0].entry.layoutObject) {
-
             // Set default widget type
-            $scope.widget = widgetAsEditable(templates[0].entry.layoutObject);
-            prepareWidgetDataForDisplay($scope.widget);
+            $scope.widget = $scope.widgetAsEditable(
+              templates[0].entry.layoutObject);
+            $scope.prepareWidgetDataForDisplay($scope.widget);
 
             // Set selected template
             angular.forEach($scope.templateOptions, function(value, key) {
@@ -128,15 +133,14 @@ define(['angular', 'jquery'], function (angular, $) {
                 $scope.selectedTemplate = value;
               }
             });
-
           }
-        })
+          return templates;
+        });
     };
 
-    init().catch(function(error) {
+    $scope.init().catch(function(error) {
       $log.warn('WidgetCreatorController couldn\'t get starter templates');
       $log.error(error);
     });
   }]);
-
 });

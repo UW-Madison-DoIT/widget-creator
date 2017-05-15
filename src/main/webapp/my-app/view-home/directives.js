@@ -9,7 +9,8 @@ define(['angular', 'require'], function(angular, require) {
       scope: {
         fname: '@',
       },
-      templateUrl: require.toUrl('../../portal/widgets/partials/widget-card.html'),
+      templateUrl: require.toUrl(
+        '../../portal/widgets/partials/widget-card.html'),
       controller: 'WidgetCardController',
       link: function(scope, element, attrs) {
         scope.$watch('fname', function(newValue, oldValue) {
@@ -20,5 +21,4 @@ define(['angular', 'require'], function(angular, require) {
       },
     };
   });
-
 });
