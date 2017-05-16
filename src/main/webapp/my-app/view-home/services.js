@@ -1,10 +1,10 @@
 'use strict';
 
-define(['angular', 'jquery'], function(angular, $) {
+define(['angular'], function(angular) {
   return angular.module('my-app.view-home.services', [])
     .factory('widgetCreatorService', [
-      '$log', '$localStorage', '$http', 'SERVICE_LOC',
-      function($log, $localStorage, $http, SERVICE_LOC) {
+      '$log', '$http', 'SERVICE_LOC',
+      function($log, $http, SERVICE_LOC) {
       var getStarterTemplates = function() {
         return $http.get(SERVICE_LOC.templates + '.json')
           .then(function(result) {
