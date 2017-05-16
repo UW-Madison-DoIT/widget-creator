@@ -1,11 +1,11 @@
 'use strict';
 
-define(['angular', 'jquery'], function(angular, $) {
+define(['angular'], function(angular) {
   return angular.module('my-app.view-home.controllers', [])
   // WIDGET CREATOR controller
   .controller('WidgetCreatorController', [
-    '$scope', '$route', '$log', 'widgetCreatorService',
-    function($scope, $route, $log, widgetCreatorService) {
+    '$scope', '$log', 'widgetCreatorService',
+    function($scope, $log, widgetCreatorService) {
     var starterTemplates = [];
     /* ---------------- */
     /* Bindable members */
