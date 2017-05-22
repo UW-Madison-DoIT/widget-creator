@@ -17,7 +17,6 @@ define(['angular'], function(angular) {
       {'value': 'widget-creator', 'name': 'Custom'},
     ];
     $scope.selectedTemplate = {};
-    $scope.content = {};
     $scope.preview = undefined;
     $scope.errorJSON = undefined;
     $scope.errorConfigJSON = undefined;
@@ -88,7 +87,10 @@ define(['angular'], function(angular) {
 
       if (widgetConfig && (!editable.jsonSample || sample)) {
         preview.widgetConfig = widgetConfig;
-        $scope.content = sample;
+        if (sample) {
+          preview.widgetURL = 'data:application/json;base64,'
+            + btoa(angular.toJson(sample));
+        }
         $scope.preview = $scope.wrapLayout(preview);
       }
     };
@@ -107,7 +109,6 @@ define(['angular'], function(angular) {
       $scope.errorJSON = undefined;
       if (editable.jsonSample) {
         editable.sample = angular.toJson(editable.jsonSample);
-        $scope.content = editable.jsonSample;
       }
       return editable;
     };
