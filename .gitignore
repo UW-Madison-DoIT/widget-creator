@@ -7,3 +7,5 @@ target
 *.iml
 node_modules
 test_out
+docs/Gemfile.lock
+docs/_site/
