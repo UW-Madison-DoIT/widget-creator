@@ -6,8 +6,6 @@ In the starter template, select `List of Links` from the drop down.
 
 ![Image of the template dropdown](img/selectorDropDown.png)
 
-![Image of selecting list of links](img/selectListOfLinks.png)
-
 A title and description have already been provided.
 
 
