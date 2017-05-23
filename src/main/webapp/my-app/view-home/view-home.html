@@ -55,7 +55,12 @@
             <!-- WIDGET URL -->
             <md-input-container class="md-block md-accent" ng-if="widget.hasWidgetURL">
               <label for="widgetURL">Widget URL *</label>
-              <input type='URL' ng-model="widget.widgetURL" id="widgetURL"></textarea>
+              <input type='URL' ng-model="widget.widgetURL" id="widgetURL"></input>
+            </md-input-container>
+            <!-- Launch URL -->
+            <md-input-container class="md-block md-accent" ng-if="widget.type != 'widget-creator'">
+              <label for="launchURL">Launch URL</label>
+              <input type="input" id="launchURL" placeholder="Enter launch URL" ng-model="widget.url">
             </md-input-container>
           </form>
           <!-- RELOAD/CLEAR -->
