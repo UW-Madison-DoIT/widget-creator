@@ -23,7 +23,7 @@ Check your balance and get some money saving tips
 Custom widgets are custom because you supply your own html markup.  Angular is
 available to use.  Use this as an example.
 
-```html
+```
 <div class='widget-body'>
   <div ng-if="content && content.data && content.data.food"  class='center' 
     style='padding:20px; font-size: 35px; '>
