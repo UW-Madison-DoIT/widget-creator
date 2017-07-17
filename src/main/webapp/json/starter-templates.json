@@ -4,6 +4,23 @@
       "entry": {
         "layoutObject": {
           "id": 4,
+          "type": "basic",
+          "widgetType": "basic",
+          "title": "Basic Widget",
+          "hasWidgetURL": false,
+          "description": "This default widget is super easy to set up!",
+          "mdIcon": "widgets",
+          "widgetConfig": {
+            "launchText": "Launch app"
+          },
+          "url": "www.example.com"
+        }
+      }
+    },
+    {
+      "entry": {
+        "layoutObject": {
+          "id": 4,
           "type": "widget-creator",
           "widgetType": "custom",
           "title": "Custom",
@@ -29,7 +46,7 @@
             "actionURL": "https://rprg.wisc.edu/search/",
             "actionTarget": "_blank",
             "actionParameter": "q",
-            "launchText": "Go to resource guide",
+            "launchText": "Launch app",
             "links": [
               {
                 "title": "Get started",
@@ -62,7 +79,7 @@
           "jsonSample": false,
           "hasWidgetURL": false,
           "widgetConfig": {
-            "launchText": "Launch the Full App",
+            "launchText": "See all",
             "additionalText": "Additional Text",
             "links": [
               {
