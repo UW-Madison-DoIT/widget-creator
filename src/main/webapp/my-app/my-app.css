@@ -1,3 +1,7 @@
+.widget-creator .bold {
+  font-weight: 600;
+}
+
 .widget-creator .portlet-body {
 	padding: 10px;
 }
@@ -19,6 +23,21 @@
 .widget-creator textarea {
 	padding: 10px 14px;
 	overflow-y: scroll;
+}
+
+.widget-creator .hint {
+  position: absolute;
+  left: 2px;
+  right: auto;
+  bottom: 7px;
+  font-size: 12px;
+  line-height: 14px;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  color: grey;
+}
+
+.widget-creator md-input-container.has-hint {
+  margin-bottom: 32px;
 }
 
 .widget-creator ::-webkit-input-placeholder {

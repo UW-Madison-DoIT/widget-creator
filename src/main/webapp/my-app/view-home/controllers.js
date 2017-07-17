@@ -15,6 +15,7 @@ define(['angular'], function(angular) {
       {'value': 'list-of-links', 'name': 'List of links'},
       {'value': 'rss', 'name': 'RSS widget'},
       {'value': 'widget-creator', 'name': 'Custom'},
+      {'value': 'basic', 'name': 'Basic'}
     ];
     $scope.selectedTemplate = {};
     $scope.preview = undefined;
@@ -45,6 +46,7 @@ define(['angular'], function(angular) {
           $scope.widget = $scope.widgetAsEditable(value.entry.layoutObject);
         }
       });
+      $scope.reload();
     };
 
     /* --------------- */
