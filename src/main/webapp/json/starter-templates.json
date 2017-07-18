@@ -137,6 +137,12 @@
             "launchText": "See all items",
             "actionItems": [
               {
+                "textSingular": "thing in empty feed.",
+                "textPlural": "things in empty feed.",
+                "feedUrl": "json/sample-action-none.json",
+                "actionUrl": "//www.example.com/#second-link"
+              },
+              {
                 "textSingular": "item needs your attention.",
                 "textPlural": "items need your attention.",
                 "feedUrl": "json/sample-action-items.json",
