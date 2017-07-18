@@ -3,7 +3,7 @@
     {
       "entry": {
         "layoutObject": {
-          "id": 4,
+          "id": 5,
           "type": "basic",
           "widgetType": "basic",
           "title": "Basic Widget",
@@ -13,7 +13,7 @@
           "widgetConfig": {
             "launchText": "Launch app"
           },
-          "url": "www.example.com"
+          "url": "//www.example.com"
         }
       }
     },
@@ -29,7 +29,7 @@
           "widgetConfig": {},
           "widgetTemplate": "<h1>Hello</h1>",
           "jsonSample": {},
-          "url": "www.example.com"
+          "url": "//www.example.com"
         }
       }
     },
@@ -41,7 +41,7 @@
           "widgetType": "search-with-links",
           "title": "Search with Links",
           "jsonSample": false,
-          "url": "www.example.com",
+          "url": "//www.example.com",
           "widgetConfig": {
             "actionURL": "https://rprg.wisc.edu/search/",
             "actionTarget": "_blank",
@@ -72,7 +72,7 @@
       "entry": {
         "layoutObject": {
           "id": 3,
-          "url": "www.example.com",
+          "url": "//www.example.com",
           "type": "list-of-links",
           "widgetType": "list-of-links",
           "title": "List of Links",
@@ -106,7 +106,7 @@
       "entry": {
         "layoutObject": {
           "id": 2,
-          "url": "www.example.com",
+          "url": "//www.example.com",
           "type": "rss",
           "widgetType": "rss",
           "title": "RSS Widget",
@@ -121,6 +121,36 @@
           },
           "hasWidgetURL": true,
           "widgetURL": ""
+        }
+      }
+    },
+    {
+      "entry": {
+        "layoutObject": {
+          "id": 6,
+          "url": "//www.example.com",
+          "type": "action-items",
+          "widgetType": "action-items",
+          "title": "Action Items",
+          "description": "A list of items that need your attention",
+          "widgetConfig": {
+            "launchText": "See all items",
+            "actionItems": [
+              {
+                "textSingular": "item needs your attention.",
+                "textPlural": "items need your attention.",
+                "feedUrl": "json/sample-action-items.json",
+                "actionUrl": "//www.example.com/#first-link"
+              },
+              {
+                "textSingular": "item needs your approval.",
+                "textPlural": "items need your approval.",
+                "feedUrl": "json/sample-action-item.json",
+                "actionUrl": "//www.example.com/#second-link"
+              }
+            ]
+          },
+          "hasWidgetURL": false
         }
       }
     }

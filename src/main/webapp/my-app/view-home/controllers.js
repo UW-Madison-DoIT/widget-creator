@@ -11,11 +11,12 @@ define(['angular'], function(angular) {
     /* Bindable members */
     /* ---------------- */
     $scope.templateOptions = [
-      {'value': 'search-with-links', 'name': 'Search with links'},
-      {'value': 'list-of-links', 'name': 'List of links'},
-      {'value': 'rss', 'name': 'RSS widget'},
+      {'value': 'basic', 'name': 'Basic'},
       {'value': 'widget-creator', 'name': 'Custom'},
-      {'value': 'basic', 'name': 'Basic'}
+      {'value': 'rss', 'name': 'RSS widget'},
+      {'value': 'list-of-links', 'name': 'List of links'},
+      {'value': 'search-with-links', 'name': 'Search with links'},
+      {'value': 'action-items', 'name': 'Action Items'},
     ];
     $scope.selectedTemplate = {};
     $scope.preview = undefined;

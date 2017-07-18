@@ -3,6 +3,9 @@ define(['angular'], function(angular) {
   return angular.module('override', [])
     // see http://uw-madison-doit.github.io/uw-frame/latest/#/md/configuration for howto
     .constant('OVERRIDE', {
+      'APP_FLAGS': {
+        'defaultTheme': 'uw-madison',
+      },
       'NAMES': {
         'title': 'Widget Creator',
         'fname': 'widget-creator',
