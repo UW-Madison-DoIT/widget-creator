@@ -1,23 +1,31 @@
 define(['angular'], function(angular) {
-  /* Keep in sync with docs/mardown/configuration.md */
   return angular.module('override', [])
-    // see http://uw-madison-doit.github.io/uw-frame/latest/#/md/configuration for howto
     .constant('OVERRIDE', {
       'APP_FLAGS': {
         'defaultTheme': 'uw-madison',
+        'showSearch': false,
+        'isWeb': false,
+        'loginOnLoad': false,
       },
       'NAMES': {
         'title': 'Widget Creator',
         'fname': 'widget-creator',
       },
       'SERVICE_LOC': {
+        'kvURL': null,
+        'groupURL': 'staticFeeds/groups.json',
+        'sessionInfo': 'staticFeeds/guest-session.json',
+        'shibbolethSessionURL': '/Shibboleth.sso/Session.json',
         'templates': 'json/starter-templates',
         'widgetApi': {
           // For local testing, change to 'staticFeeds/'
           'entry': 'data:application/json;base64,',
           'entrySuffix': '',
-          'entries': '/portal/api/marketplace/entries.json',
+          'entries': null,
         },
+      },
+      'MISC_URLS': {
+        'rootURL': 'https://my.wisc.edu',
       },
     });
 });
