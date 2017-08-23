@@ -1,4 +1,5 @@
 define(['angular'], function(angular) {
+  // see https://uw-madison-doit.github.io/uw-frame/configuration.html for howto
   return angular.module('override', [])
     .constant('OVERRIDE', {
       'APP_FLAGS': {
