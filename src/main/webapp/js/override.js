@@ -16,7 +16,7 @@ define(['angular'], function(angular) {
         'kvURL': null,
         'groupURL': 'staticFeeds/groups.json',
         'sessionInfo': 'staticFeeds/guest-session.json',
-        'shibbolethSessionURL': '/Shibboleth.sso/Session.json',
+        'shibbolethSessionURL': 'staticFeeds/Shibboleth.sso/Session.json',
         'templates': 'json/starter-templates',
         'widgetApi': {
           // For local testing, change to 'staticFeeds/'
