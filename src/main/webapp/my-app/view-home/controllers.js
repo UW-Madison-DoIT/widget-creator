@@ -13,10 +13,11 @@ define(['angular'], function(angular) {
     $scope.templateOptions = [
       {'value': 'basic', 'name': 'Basic'},
       {'value': 'widget-creator', 'name': 'Custom'},
-      {'value': 'rss', 'name': 'RSS widget'},
       {'value': 'list-of-links', 'name': 'List of links'},
-      {'value': 'search-with-links', 'name': 'Search with links'},
       {'value': 'action-items', 'name': 'Action Items'},
+      {'value': 'time-sensitive-content', 'name': 'Time Sensitive Content'},
+      {'value': 'search-with-links', 'name': 'Search with links'},
+      {'value': 'rss', 'name': 'RSS widget'},
     ];
     $scope.selectedTemplate = {};
     $scope.preview = undefined;
