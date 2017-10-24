@@ -159,6 +159,41 @@
           "hasWidgetURL": false
         }
       }
+    },
+    {
+      "entry": {
+        "layoutObject": {
+          "id": 7,
+          "url": "//www.example.com",
+          "type": "time-sensitive-content",
+          "widgetType": "time-sensitive-content",
+          "title": "Time Sensitive Content",
+          "mdIcon": "widgets",
+          "description": "A widget for displaying content before, during, and after a specified period of time",
+          "widgetConfig": {
+            "callsToAction": [
+              {
+                "activeDateRange": {
+                  "templateLiveDate": "2017-10-01",
+                  "takeActionStartDate": "2017-10-02",
+                  "takeActionEndDate": "2017-10-03",
+                  "templateRetireDate": "2017-10-04"
+                },
+                "actionName": "This is happening!",
+                "daysLeftMessage": "to make it happen.",
+                "lastDayMessage": "Today is the last day it could happen.",
+                "actionButton": {
+                    "url": "//www.example.com",
+                    "label": "Do it to it"
+                },
+                "learnMoreUrl": "//www.example.com",
+                "feedbackUrl": "//www.example.com"
+              }
+            ]
+          },
+          "hasWidgetURL": false
+        }
+      }
     }
   ]
 }

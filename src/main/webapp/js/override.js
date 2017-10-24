@@ -3,7 +3,7 @@ define(['angular'], function(angular) {
   return angular.module('override', [])
     .constant('OVERRIDE', {
       'APP_FLAGS': {
-        'defaultTheme': 'uw-madison',
+        'defaultTheme': 'uwMadison',
         'showSearch': false,
         'isWeb': false,
         'loginOnLoad': false,
