@@ -169,7 +169,8 @@
           "widgetType": "time-sensitive-content",
           "title": "Time Sensitive Content",
           "mdIcon": "widgets",
-          "description": "A widget for displaying content before, during, and after a specified period of time",
+          "description":
+            "A widget for displaying content before, during, and after a specified period of time",
           "widgetConfig": {
             "callsToAction": [
               {
@@ -183,8 +184,8 @@
                 "daysLeftMessage": "to make it happen.",
                 "lastDayMessage": "Today is the last day it could happen.",
                 "actionButton": {
-                    "url": "//www.example.com",
-                    "label": "Do it to it"
+                  "url": "//www.example.com",
+                  "label": "Do it to it"
                 },
                 "learnMoreUrl": "//www.example.com",
                 "feedbackUrl": "//www.example.com"

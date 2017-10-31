@@ -1,7 +1,4 @@
----
----
-
-@import "{{ site.theme }}";
+@import '{{ site.theme }}';
 
 .wrapper {
   width: auto;
@@ -27,7 +24,7 @@ header {
     }
   }
   a.button {
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     background: #39c;
     color: #fff;
     display: inline-block;
@@ -51,8 +48,10 @@ header {
     font-weight: 500;
     text-decoration: none;
     overflow: hidden;
-    -webkit-transition: box-shadow .4s cubic-bezier(.25,.8,.25,1),background-color .4s cubic-bezier(.25,.8,.25,1);
-    transition: box-shadow .4s cubic-bezier(.25,.8,.25,1),background-color .4s cubic-bezier(.25,.8,.25,1);
+    -webkit-transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+      background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+      background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     &:hover {
       background: #069;
     }
@@ -120,7 +119,9 @@ footer {
   body {
     margin: 0;
     padding: 40px 40px 40px 0;
-    header, section, footer {
+    header,
+    section,
+    footer {
       padding-left: 40px;
     }
   }

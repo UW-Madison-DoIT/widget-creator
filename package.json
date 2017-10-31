@@ -10,6 +10,7 @@
     "build:lint-js":
       "eslint --ext js --ext json --ext md . --ignore-path .gitignore",
     "build": "npm run build:pre && npm run build:test && npm run build:lint-js",
+    "format": "prettier-eslint --write \"**/*.{js,json,css,scss}\"",
     "test": "npm run build:pre && npm run build:test",
     "lint-js": "npm run build:pre && npm run build:lint-js",
     "dev": "npm run build:pre && mvn jetty:run",

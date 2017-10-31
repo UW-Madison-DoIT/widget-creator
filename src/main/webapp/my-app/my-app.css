@@ -3,26 +3,26 @@
 }
 
 .widget-creator .portlet-body {
-	padding: 10px;
+  padding: 10px;
 }
 
 .widget-creator .container__select-template {
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .widget-creator preview-widget {
-	width: 300px;
+  width: 300px;
 }
 
 .widget-creator .help-notes p {
-	color: #999;
-	font-size: 12px;
-	margin-bottom: 0;
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 0;
 }
 
 .widget-creator textarea {
-	padding: 10px 14px;
-	overflow-y: scroll;
+  padding: 10px 14px;
+  overflow-y: scroll;
 }
 
 .widget-creator .hint {
@@ -41,26 +41,28 @@
 }
 
 .widget-creator ::-webkit-input-placeholder {
-	color: @grayscale6;
-	font-size: 12px;
+  color: @grayscale6;
+  font-size: 12px;
 }
 
-.widget-creator  :-moz-placeholder { /* Firefox 18- */
-	color: @grayscale6;
-	font-size: 12px;
+.widget-creator :-moz-placeholder {
+  /* Firefox 18- */
+  color: @grayscale6;
+  font-size: 12px;
 }
 
-.widget-creator  ::-moz-placeholder {  /* Firefox 19+ */
-	color: @grayscale6;
-	font-size: 12px;
+.widget-creator ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: @grayscale6;
+  font-size: 12px;
 }
 
-.widget-creator  :-ms-input-placeholder {
-	color: @grayscale6;
-	font-size: 12px;
+.widget-creator :-ms-input-placeholder {
+  color: @grayscale6;
+  font-size: 12px;
 }
 
 .widget-middle {
-	width: 315px;
-	margin: auto;
+  width: 315px;
+  margin: auto;
 }
