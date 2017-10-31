@@ -90,5 +90,10 @@
   },
   "lint-staged": {
     "*.{js,json,scss,css}": ["prettier-eslint --write", "git add"]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "trailingComma": "es5"
   }
 }

@@ -160,7 +160,9 @@ define(['angular'], function(angular) {
           };
 
           $scope.init().catch(function(error) {
-            $log.warn('WidgetCreatorController couldn\'t get starter templates');
+            $log.warn(
+              'WidgetCreatorController could not get starter templates'
+            );
             $log.error(error);
           });
         },
