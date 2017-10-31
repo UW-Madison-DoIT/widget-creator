@@ -32,6 +32,7 @@
     "eslint-plugin-compat": "^2.0.1",
     "eslint-plugin-jasmine": "^2.9.1",
     "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-promise": "^3.6.0",
     "husky": "^0.14.3",
     "jasmine-core": "^2.8.0",
@@ -60,7 +61,7 @@
       "jasmine": true,
       "amd": true
     },
-    "plugins": ["angular", "compat", "jasmine", "json", "promise"],
+    "plugins": ["angular", "compat", "jasmine", "json", "markdown", "promise"],
     "extends": [
       "eslint:recommended",
       "google",
@@ -83,7 +84,8 @@
       "prefer-spread": "off",
       "valid-jsdoc": "warn",
       "rest-spread-spacing": "off",
-      "yield-star-spacing": "off"
+      "yield-star-spacing": "off",
+      "multiline-comment-style": "error"
     }
   },
   "lint-staged": {
