@@ -1,5 +1,5 @@
-The 
-[Widget Documentation](http://uw-madison-doit.github.io/uw-frame/widgets.html) 
+The
+[Widget Documentation](http://uw-madison-doit.github.io/uw-frame/widgets.html)
 has more information about configuration options and more technical details.
 
 In the starter template, select `List of Links` from the drop down.
@@ -22,7 +22,7 @@ Let’s format that JSON so it’s easier to read
 "additionalText":"Additional Text"
 ,"links":[
   {
-    "title":"The Google", 
+    "title":"The Google",
     "href":"http://www.google.com",
     "icon":"fa-google",
     "target":"_blank",
@@ -54,7 +54,7 @@ For the widget config, copy and paste this:
 "launchText":"All Apereo Projects",
 "links":[
   {
-    "title":"uPortal", 
+    "title":"uPortal",
     "href":"https://www.apereo.org/projects/uportal",
     "icon":"fa-google",
     "target":"_blank",
@@ -66,7 +66,7 @@ For the widget config, copy and paste this:
 Finally, type ‘https://www.apereo.org/content/projects-communities’ for Launch URL
 
 Let’s break that widget configuration down into parts.
-The first part is to notice that the launch text is configurable.  Try updating the launch text to “See all Apereo projects” 
+The first part is to notice that the launch text is configurable.  Try updating the launch text to “See all Apereo projects”
 ```
 "launchText":"See all Apereo Projects",
 ```
@@ -80,14 +80,14 @@ Try adding more links.  If you need help, here’s some sample widget configurat
 "launchText":"See All Apereo Projects",
 "links":[
   {
-    "title":"uPortal", 
+    "title":"uPortal",
     "href":"https://www.apereo.org/projects/uportal",
     "icon":"fa-key",
     "target":"_blank",
     "rel":"noopener  noreferrer"
   },
   {
-    "title":"Sakai Project", 
+    "title":"Sakai Project",
     "href":"https://www.apereo.org/projects/sakai-project",
     "icon":"fa-folder-open",
     "target":"_blank",
@@ -99,28 +99,28 @@ Try adding more links.  If you need help, here’s some sample widget configurat
 
 You can keep adding more links and see that the widget auto formats the correct spacing and layout.
 
-Try three links 
+Try three links
 
 ```javascript
 {
 "launchText":"See All Apereo Projects",
 "links":[
   {
-    "title":"uPortal", 
+    "title":"uPortal",
     "href":"https://www.apereo.org/projects/uportal",
     "icon":"fa-key",
     "target":"_blank",
     "rel":"noopener  noreferrer"
   },
   {
-    "title":"Sakai Project", 
+    "title":"Sakai Project",
     "href":"https://www.apereo.org/projects/sakai-project",
     "icon":"fa-folder-open",
     "target":"_blank",
     "rel":"noopener  noreferrer"
   },
 {
-    "title":"Student Success Plan", 
+    "title":"Student Success Plan",
     "href":"https://www.apereo.org/projects/student-success-plan",
     "icon":"fa-graduation-cap",
     "target":"_blank",
