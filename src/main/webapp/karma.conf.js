@@ -7,12 +7,16 @@ module.exports = function(config) {
     basePath: './',
 
     files: [
-      // main.js will handle finding and loading the tests,
-      // by way of RequireJS.
+      /*
+       * main.js will handle finding and loading the tests,
+       * by way of RequireJS.
+       */
       'test/main.js',
       '../../node_modules/karma-read-json/karma-read-json.js',
-      // all other files need to be listed in order to be hosted and
-      // available, but excluded so that they are not run automatically.
+      /*
+       * all other files need to be listed in order to be hosted and
+       * available, but excluded so that they are not run automatically.
+       */
       {pattern: './**', included: false},
     ],
 

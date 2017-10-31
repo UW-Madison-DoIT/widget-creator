@@ -45,7 +45,10 @@ define(['angular'], function(angular) {
 
           // Change to newly-selected template type
           $scope.changeTemplate = function() {
-            // Set widget equal to starter template that matches the selected type
+            /*
+             * Set widget equal to starter template that matches the selected
+             * type
+             */
             angular.forEach(starterTemplates, function(value, key) {
               if (
                 $scope.selectedTemplate.value == value.entry.layoutObject.type
@@ -72,10 +75,10 @@ define(['angular'], function(angular) {
           };
 
           /**
-     * Check if json is valid
-     * @param {String} json the json to parse
-     * @return {Object|undefined}
-     */
+           * Check if json is valid
+           * @param {String} json the json to parse
+           * @return {Object|undefined}
+           */
           $scope.parseJSON = function parseJSON(json) {
             try {
               return angular.fromJson(json);
@@ -85,9 +88,9 @@ define(['angular'], function(angular) {
           };
 
           /**
-     * Convert JSON objects to strings so they can be displayed in HTML
-     * @param  {Object} editable The object used to store user edits
-     */
+           * Convert JSON objects to strings so they can be displayed in HTML
+           * @param  {Object} editable The object used to store user edits
+           */
           $scope.prepareWidgetDataForDisplay = function(editable) {
             var preview = angular.copy(editable);
             var widgetConfig = $scope.parseJSON(editable.widgetConfig);
@@ -110,10 +113,11 @@ define(['angular'], function(angular) {
           };
 
           /**
-     * Takes a valid widget configuration and creates an user-editable version.
-     * @param  {Object} widget widget configuration
-     * @return {Object}        user-editable widget config
-     */
+           * Takes a valid widget configuration and creates an user-editable
+           * version.
+           * @param  {Object} widget widget configuration
+           * @return {Object}        user-editable widget config
+           */
           $scope.widgetAsEditable = function(widget) {
             var editable = angular.copy(widget);
             $scope.errorConfigJSON = undefined;
@@ -128,9 +132,9 @@ define(['angular'], function(angular) {
           };
 
           /**
-     * Initialize widget creator
-     * @return {Promise<Array>} starter templates
-     */
+           * Initialize widget creator
+           * @return {Promise<Array>} starter templates
+           */
           $scope.init = function() {
             return widgetCreatorService
               .getStarterTemplates()
