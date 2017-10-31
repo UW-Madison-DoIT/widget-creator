@@ -18,24 +18,25 @@ Widget configuration - Notice that sample text has already been provided:
 Let’s format that JSON so it’s easier to read
 ```json
 {
-"launchText":"Launch the Full App",
-"additionalText":"Additional Text"
-,"links":[
-  {
-    "title":"The Google",
-    "href":"http://www.google.com",
-    "icon":"fa-google",
-    "target":"_blank",
-    "rel":"noopener  noreferrer"
-  },
-  {
-    "title":"Bing",
-    "href":"http://www.bing.com",
-    "icon":"fa-bed",
-    "target":"_blank",
-    "rel":"noopener noreferrer"
-  }
-]}
+  "launchText": "Launch the Full App",
+  "additionalText": "Additional Text",
+  "links": [
+    {
+      "title": "The Google",
+      "href": "http://www.google.com",
+      "icon": "fa-google",
+      "target": "_blank",
+      "rel": "noopener  noreferrer"
+    },
+    {
+      "title": "Bing",
+      "href": "http://www.bing.com",
+      "icon": "fa-bed",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
+    }
+  ]
+}
 ```
 
 
@@ -51,16 +52,17 @@ For the widget config, copy and paste this:
 
 ```json
 {
-"launchText":"All Apereo Projects",
-"links":[
-  {
-    "title":"uPortal",
-    "href":"https://www.apereo.org/projects/uportal",
-    "icon":"fa-google",
-    "target":"_blank",
-    "rel":"noopener  noreferrer"
-  }
-]}
+  "launchText": "All Apereo Projects",
+  "links": [
+    {
+      "title":"uPortal",
+      "href":"https://www.apereo.org/projects/uportal",
+      "icon":"fa-google",
+      "target":"_blank",
+      "rel":"noopener  noreferrer"
+    }
+  ]
+}
 ```
 
 Finally, type ‘https://www.apereo.org/content/projects-communities’ for Launch URL
@@ -77,23 +79,24 @@ Try adding more links.  If you need help, here’s some sample widget configurat
 
 ```json
 {
-"launchText":"See All Apereo Projects",
-"links":[
-  {
-    "title":"uPortal",
-    "href":"https://www.apereo.org/projects/uportal",
-    "icon":"fa-key",
-    "target":"_blank",
-    "rel":"noopener  noreferrer"
-  },
-  {
-    "title":"Sakai Project",
-    "href":"https://www.apereo.org/projects/sakai-project",
-    "icon":"fa-folder-open",
-    "target":"_blank",
-    "rel":"noopener  noreferrer"
-  }
-]}
+  "launchText": "See All Apereo Projects",
+  "links": [
+    {
+      "title": "uPortal",
+      "href": "https://www.apereo.org/projects/uportal",
+      "icon": "fa-key",
+      "target": "_blank",
+      "rel": "noopener  noreferrer"
+    },
+    {
+      "title": "Sakai Project",
+      "href": "https://www.apereo.org/projects/sakai-project",
+      "icon": "fa-folder-open",
+      "target": "_blank",
+      "rel": "noopener  noreferrer"
+    }
+  ]
+}
 ```
 
 
@@ -101,32 +104,33 @@ You can keep adding more links and see that the widget auto formats the correct 
 
 Try three links
 
-```javascript
+```json
 {
-"launchText":"See All Apereo Projects",
-"links":[
-  {
-    "title":"uPortal",
-    "href":"https://www.apereo.org/projects/uportal",
-    "icon":"fa-key",
-    "target":"_blank",
-    "rel":"noopener  noreferrer"
-  },
-  {
-    "title":"Sakai Project",
-    "href":"https://www.apereo.org/projects/sakai-project",
-    "icon":"fa-folder-open",
-    "target":"_blank",
-    "rel":"noopener  noreferrer"
-  },
-{
-    "title":"Student Success Plan",
-    "href":"https://www.apereo.org/projects/student-success-plan",
-    "icon":"fa-graduation-cap",
-    "target":"_blank",
-    "rel":"noopener  noreferrer"
-  }
-]}
+  "launchText": "See All Apereo Projects",
+  "links": [
+    {
+      "title": "uPortal",
+      "href": "https://www.apereo.org/projects/uportal",
+      "icon": "fa-key",
+      "target": "_blank",
+      "rel": "noopener  noreferrer"
+    },
+    {
+      "title": "Sakai Project",
+      "href": "https://www.apereo.org/projects/sakai-project",
+      "icon": "fa-folder-open",
+      "target": "_blank",
+      "rel": "noopener  noreferrer"
+    },
+    {
+      "title": "Student Success Plan",
+      "href": "https://www.apereo.org/projects/student-success-plan",
+      "icon": "fa-graduation-cap",
+      "target": "_blank",
+      "rel": "noopener  noreferrer"
+    }
+  ]
+}
 ```
 
 See what happens the more you add!
