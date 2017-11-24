@@ -18,6 +18,7 @@ before_install:
 
 script:
   - npm test
+  - npm run lint-commit-ci
   - npm run lint-js
 
 cache:
