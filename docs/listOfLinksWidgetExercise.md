@@ -65,7 +65,7 @@ For the widget config, copy and paste this:
 }
 ```
 
-Finally, type ‘https://www.apereo.org/content/projects-communities’ for Launch URL
+Finally, type ‘<https://www.apereo.org/content/projects-communities>’ for Launch URL
 
 Let’s break that widget configuration down into parts.
 The first part is to notice that the launch text is configurable.  Try updating the launch text to “See all Apereo projects”
