@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.wisc.my.app</groupId>
   <artifactId>widget-creator</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <name>Widget Creator War</name>
   <description>Web application for uportal-app-framework widget creator.</description>
   <packaging>war</packaging>
@@ -10,7 +10,7 @@
     <connection>scm:git:git@github.com:UW-Madison-DoIT/widget-creator.git</connection>
     <developerConnection>scm:git:git@github.com:UW-Madison-DoIT/widget-creator.git</developerConnection>
     <url>https://github.com/UW-Madison-DoIT/widget-creator</url>
-    <tag>HEAD</tag>
+    <tag>widget-creator-1.0.1</tag>
   </scm>
 
   <distributionManagement>
@@ -55,7 +55,7 @@
     <dependency>
       <groupId>org.apereo.uportal</groupId>
       <artifactId>uportal-app-framework</artifactId>
-      <version>7.0.1-SNAPSHOT</version>
+      <version>7.0.0</version>
       <type>war</type>
     </dependency>
   </dependencies>
