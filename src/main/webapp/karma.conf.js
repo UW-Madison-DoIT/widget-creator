@@ -29,7 +29,14 @@ module.exports = function(config) {
 
     frameworks: ['jasmine', 'requirejs'],
 
-    browsers: ['ChromeHeadless'], // or 'Chrome'
+    browsers: ['ChromeHeadlessNoSandbox'], // or 'Chrome'
+
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox'],
+      },
+    },
 
     plugins: [
       'karma-htmlfile-reporter',
