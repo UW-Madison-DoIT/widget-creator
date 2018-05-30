@@ -4,7 +4,7 @@ define(
     'require',
     './view-home/routes', // add all the paths to your routes here
     'portal/settings/routes', // example pulling in portal module routes
-    'portal/about/route', // Nice about page for your application
+    'portal/about/routes', // Nice about page for your application
     'portal/main/routes',
     'portal',
     'app-config',
@@ -20,7 +20,7 @@ define(
     require,
     homeRoutes,
     settingsRoutes,
-    aboutRoute,
+    aboutRoutes,
     mainRoutes
   ) {
     // notice each route file is now an object
@@ -45,7 +45,8 @@ define(
             .when('/home', homeRoutes.home)
             .when('/settings', settingsRoutes.betaSettings)
             .when('/user-settings', settingsRoutes.userSettings)
-            .when('/about', aboutRoute)
+            .when('/about', aboutRoutes.about)
+            .when('/version-info', aboutRoutes.sessionInfo)
             .when('/access-denied', mainRoutes.accessDenied)
             .otherwise({redirectTo: '/home'});
         },

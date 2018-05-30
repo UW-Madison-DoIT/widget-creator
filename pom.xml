@@ -55,7 +55,7 @@
     <dependency>
       <groupId>org.apereo.uportal</groupId>
       <artifactId>uportal-app-framework</artifactId>
-      <version>7.0.1-SNAPSHOT</version>
+      <version>9.2.0</version>
       <type>war</type>
     </dependency>
   </dependencies>

@@ -7,12 +7,16 @@ define(['angular'], function(angular) {
       isWeb: false,
       loginOnLoad: false,
     },
+    APP_OPTIONS: {
+      appMenuTemplateURL: '/my-app/navigation/drawer.html',
+    },
     NAMES: {
       title: 'Widget Creator',
       fname: 'widget-creator',
     },
     SERVICE_LOC: {
       kvURL: null,
+      aboutPageURL: 'json/about-widget-creator.json',
       groupURL: 'staticFeeds/groups.json',
       sessionInfo: 'staticFeeds/guest-session.json',
       shibbolethSessionURL: 'staticFeeds/Shibboleth.sso/Session.json',
