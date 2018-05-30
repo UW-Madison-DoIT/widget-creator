@@ -51,14 +51,14 @@
               {
                 "title": "Get started",
                 "href": "https://rprg.wisc.edu/phases/initiate/",
-                "icon": "fa-map-o",
+                "icon": "directions",
                 "target": "_blank",
                 "rel": "noopener noreferrer"
               },
               {
                 "title": "Resources",
                 "href": "https://rprg.wisc.edu/category/resource/",
-                "icon": "fa-th-list",
+                "icon": "folder_open",
                 "target": "_blank",
                 "rel": "noopener noreferrer"
               }
@@ -85,14 +85,14 @@
               {
                 "title": "The Google",
                 "href": "http://www.google.com",
-                "icon": "fa-google",
+                "icon": "mood",
                 "target": "_blank",
                 "rel": "noopener noreferrer"
               },
               {
                 "title": "Bing",
                 "href": "http://www.bing.com",
-                "icon": "fa-bed",
+                "icon": "mood_bad",
                 "target": "_blank",
                 "rel": "noopener noreferrer"
               }
