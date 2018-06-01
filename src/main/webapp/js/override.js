@@ -16,7 +16,6 @@ define(['angular'], function(angular) {
     },
     SERVICE_LOC: {
       kvURL: null,
-      aboutPageURL: 'json/about-widget-creator.json',
       groupURL: 'staticFeeds/groups.json',
       sessionInfo: 'staticFeeds/guest-session.json',
       shibbolethSessionURL: 'staticFeeds/Shibboleth.sso/Session.json',

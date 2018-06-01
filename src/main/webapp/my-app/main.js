@@ -45,7 +45,6 @@ define(
             .when('/home', homeRoutes.home)
             .when('/settings', settingsRoutes.betaSettings)
             .when('/user-settings', settingsRoutes.userSettings)
-            .when('/about', aboutRoutes.about)
             .when('/version-info', aboutRoutes.sessionInfo)
             .when('/access-denied', mainRoutes.accessDenied)
             .otherwise({redirectTo: '/home'});
