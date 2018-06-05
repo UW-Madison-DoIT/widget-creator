@@ -1,12 +1,11 @@
 <frame-page class="widget-creator"
             app-title="Widget Creator"
-            app-icon="widgets"
+            page-title="Widget Creator"
             app-fname="widget-creator"
-            app-has-page-level-sidenav="false"
             white-background="false">
-  <div class="portlet-body" layout-gt-sm="row" layout-sm="column" ng-controller="WidgetCreatorController as widgetCreatorCtrl">
+  <div class="view__home" layout-gt-sm="row" layout-sm="column" ng-controller="WidgetCreatorController as widgetCreatorCtrl">
     <!-- WIDGET CONFIGURATION FORM -->
-    <md-card flex-gt-sm="60" class="config" layout-padding>
+    <md-card flex class="config" layout-padding>
       <md-card-title>
         <md-card-title-text>
           <span class="md-title">Smart Widget Configuration</span>
@@ -84,7 +83,7 @@
       </md-card-content>
     </md-card>
     <!-- WIDGET PREVIEW -->
-    <div flex-gt-sm="40">
+    <div class="widget-preview">
       <div class="list-container no-padding output" layout="row" layout-align="center center">
         <preview-widget ng-attr-fname="{{ preview }}"></preview-widget>
       </div>

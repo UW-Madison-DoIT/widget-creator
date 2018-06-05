@@ -24,6 +24,7 @@
       <url-pattern>/settings</url-pattern>
       <url-pattern>/user-settings</url-pattern>
       <url-pattern>/about</url-pattern>
+      <url-pattern>/version-info</url-pattern>
       <url-pattern>/access-denied</url-pattern>
   </servlet-mapping>
 </web-app>

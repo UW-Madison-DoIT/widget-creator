@@ -1,0 +1,22 @@
+{
+  "description": "Widget creator",
+  "keywords": "widget, widgets, myuw, madison, wisconsin",
+  "aboutText": [
+    "This tool supports the development of widgets for MyUW (or other apps in the MyUW ecosystem). Here developers and product owners can experiment with the different types of widgets or create custom widgets from scratch.",
+    "Because Widget Creator is built on the same framework as MyUW, you can be confident that the live preview of widgets created here will reflect exactly how they will look/perform in MyUW proper."
+  ],
+  "aboutLinks": [
+    {
+      "url": "https://docs.google.com/a/wisc.edu/forms/d/1h4t8IVveOK-kYQPuZceW9z4ZZiYepUnWD-BE4A58mnE/viewform",
+      "text": "Suggest an item for the MyUW app directory"
+    },
+    {
+      "url": "https://github.com/UW-Madison-DoIT/widget-creator",
+      "text": "Widget creator on GitHub"
+    },
+    {
+      "url": "https://tools.my.wisc.edu/home/",
+      "text": "Other tools created by the MyUW team"
+    }
+  ]
+}

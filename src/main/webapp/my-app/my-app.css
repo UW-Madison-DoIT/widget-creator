@@ -1,3 +1,15 @@
+.wrapper__page-title > h1.md-display-1 {
+  display: none;
+}
+
+.view__home {
+  padding: 0 12px 24px;
+}
+
+.view__home .widget-preview {
+  margin: 0 24px;
+}
+
 .widget-creator .bold {
   font-weight: 600;
 }

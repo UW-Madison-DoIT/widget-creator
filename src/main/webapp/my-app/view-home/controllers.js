@@ -140,7 +140,6 @@ define(['angular'], function(angular) {
               .getStarterTemplates()
               .then(function(templates) {
                 starterTemplates = templates;
-                $log.log('Got starter templates');
                 if (templates[0].entry.layoutObject) {
                   // Set default widget type
                   $scope.widget = $scope.widgetAsEditable(

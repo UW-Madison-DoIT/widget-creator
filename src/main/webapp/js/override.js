@@ -7,6 +7,9 @@ define(['angular'], function(angular) {
       isWeb: false,
       loginOnLoad: false,
     },
+    APP_OPTIONS: {
+      appMenuTemplateURL: '/my-app/navigation/drawer.html',
+    },
     NAMES: {
       title: 'Widget Creator',
       fname: 'widget-creator',
