@@ -86,15 +86,13 @@
                 "title": "The Google",
                 "href": "http://www.google.com",
                 "icon": "mood",
-                "target": "_blank",
-                "rel": "noopener noreferrer"
+                "target": "_blank"
               },
               {
                 "title": "Bing",
                 "href": "http://www.bing.com",
                 "icon": "mood_bad",
-                "target": "_blank",
-                "rel": "noopener noreferrer"
+                "target": "_blank"
               }
             ]
           },
