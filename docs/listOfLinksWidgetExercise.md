@@ -12,7 +12,7 @@ A title and description have already been provided.
 
 Widget configuration - Notice that sample text has already been provided:
 ```json
-{"launchText":"Launch the Full App","additionalText":"Additional Text","links":[{"title":"The Google","href":"http://www.google.com","icon":"fa-google","target":"_blank","rel":"noopener noreferrer"},{"title":"Bing","href":"http://www.bing.com","icon":"fa-bed","target":"_blank","rel":"noopener noreferrer"}]}
+{"launchText":"Launch the Full App","additionalText":"Additional Text","links":[{"title":"The Google","href":"http://www.google.com","icon":"fa-google","target":"_blank"},{"title":"Bing","href":"http://www.bing.com","icon":"fa-bed","target":"_blank"}]}
 ```
 
 Let’s format that JSON so it’s easier to read
@@ -25,15 +25,13 @@ Let’s format that JSON so it’s easier to read
       "title": "The Google",
       "href": "http://www.google.com",
       "icon": "fa-google",
-      "target": "_blank",
-      "rel": "noopener  noreferrer"
+      "target": "_blank"
     },
     {
       "title": "Bing",
       "href": "http://www.bing.com",
       "icon": "fa-bed",
-      "target": "_blank",
-      "rel": "noopener noreferrer"
+      "target": "_blank"
     }
   ]
 }
@@ -58,8 +56,7 @@ For the widget config, copy and paste this:
       "title":"uPortal",
       "href":"https://www.apereo.org/projects/uportal",
       "icon":"fa-google",
-      "target":"_blank",
-      "rel":"noopener  noreferrer"
+      "target":"_blank"
     }
   ]
 }
@@ -85,15 +82,13 @@ Try adding more links.  If you need help, here’s some sample widget configurat
       "title": "uPortal",
       "href": "https://www.apereo.org/projects/uportal",
       "icon": "fa-key",
-      "target": "_blank",
-      "rel": "noopener  noreferrer"
+      "target": "_blank"
     },
     {
       "title": "Sakai Project",
       "href": "https://www.apereo.org/projects/sakai-project",
       "icon": "fa-folder-open",
-      "target": "_blank",
-      "rel": "noopener  noreferrer"
+      "target": "_blank"
     }
   ]
 }
@@ -112,22 +107,19 @@ Try three links
       "title": "uPortal",
       "href": "https://www.apereo.org/projects/uportal",
       "icon": "fa-key",
-      "target": "_blank",
-      "rel": "noopener  noreferrer"
+      "target": "_blank"
     },
     {
       "title": "Sakai Project",
       "href": "https://www.apereo.org/projects/sakai-project",
       "icon": "fa-folder-open",
-      "target": "_blank",
-      "rel": "noopener  noreferrer"
+      "target": "_blank"
     },
     {
       "title": "Student Success Plan",
       "href": "https://www.apereo.org/projects/student-success-plan",
       "icon": "fa-graduation-cap",
-      "target": "_blank",
-      "rel": "noopener  noreferrer"
+      "target": "_blank"
     }
   ]
 }
