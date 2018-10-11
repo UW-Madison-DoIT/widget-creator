@@ -4,6 +4,8 @@
 
 ### Fixed in next release
 
++ Stopped suggesting doesn't-actually-do-anything `rel` in `list-of-links`
+  `widgetConfig`. ( [#35][], [MUMMNG-4380][] )
 + Upgraded dependencies, including to resolve vulnerabilities ( [#34][] )
 
 ## 1.0.2
@@ -45,6 +47,8 @@ Initial v1 release.
 [#32]: https://github.com/UW-Madison-DoIT/widget-creator/pull/32
 [#33]: https://github.com/UW-Madison-DoIT/widget-creator/pull/33
 [#34]: https://github.com/UW-Madison-DoIT/widget-creator/pull/34
+[#35]: https://github.com/UW-Madison-DoIT/widget-creator/pull/35
 [MUMMNG-4176]: https://jira.doit.wisc.edu/jira/browse/MUMMNG-4176
+[MUMMNG-4380]:  https://jira.doit.wisc.edu/jira/browse/MUMMNG-4380
 [MUMUP-3138]: https://jira.doit.wisc.edu/jira/browse/MUMUP-3138
 [uPortal-app-framework 9.2.0]: https://github.com/uPortal-Project/uportal-app-framework/blob/master/CHANGELOG.md#920---2018-05-22
