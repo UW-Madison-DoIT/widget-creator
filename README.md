@@ -1,11 +1,5 @@
 # widget-creator
 
-[![Build Status](https://travis-ci.org/UW-Madison-DoIT/widget-creator.svg?branch=master)](https://travis-ci.org/UW-Madison-DoIT/widget-creator)
-[![devDependencies Status](https://david-dm.org/UW-Madison-DoIT/widget-creator/dev-status.svg)](https://david-dm.org/UW-Madison-DoIT/widget-creator?type=dev)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-Web-based tool supporting developing widgets for uPortal-home.  Documentation available at <https://uw-madison-doit.github.io/widget-creator/>
-
-## How to run locally
-```bash
-mvn jetty:run
-```
+Moved to [a UW-Madison internal git repository](https://git.doit.wisc.edu/wps/myuw-service/myuw-legacy/widget-creator).
